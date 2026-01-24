@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <fieldset>
+                <legend><h1>Age Calculator</h1></legend>
+                <div id="input">
+                    <label for="date">Enter you birth date:</label>
+                    <br><br>
+                    <input type="date" name="birth-date" id="date">
+                </div>
+                <br>
+                <button id="calculate">Calculate</button>
+                <br>
+                <p id="result">Place your birth date to calculate</p>
+            </fieldset>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+<script src="script.js"></script>
+</html>

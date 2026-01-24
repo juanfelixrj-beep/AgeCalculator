@@ -1,0 +1,32 @@
+body{
+    margin:0px;
+    font-family: "Inter";
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+input{
+    width: 200px;
+    height: 25px;
+}
+button{
+    background-color: black;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+
+}
+fieldset{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+}
