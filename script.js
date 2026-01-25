@@ -1,35 +1,51 @@
-const { DateTime } = luxon;
-
-const result = document.querySelector("#result");
-const IN_date = document.querySelector("#date");
 const BTN_calculate = document.querySelector("#calculate");
+const date = document.querySelector("#date");
+const result = document.querySelector("#result");
+const resultDays = document.querySelector("#days");
 
-const dt = DateTime.now();
+const dt = luxon.DateTime
+const now = dt.now()
 
-BTN_calculate.addEventListener("click", () => {
+date.addEventListener("input", () =>{
+  let value = date.value.replace(/\D/g,"");
 
-    //Gets Values From Input
-    let input_value = IN_date.value;
-    if(input_value == null || input_value == ""){
-        alert("You need to enter a date.")
-        return
+  if(value.length > 2){
+    value = value.slice(0,2) + "/" + value.slice(2);
+  }
+  if(value.length > 5){
+    value = value.slice(0,5) + "/" + value.slice(5, 9);
+  }
 
-    };
+  date.value = value;
+})
 
-    let year = parseInt(input_value.slice(0, -6));
-    let month = parseInt(input_value.slice(-5, -3));
+BTN_calculate.addEventListener("click", () =>{
+  let value = date.value;
+  if(value.length != 10){
+    alert("Digite no formato correto");
+    return;
+  }
 
-    //Get Values From Actual Date
-    let actual_month = parseInt(dt.month);
-    let actual_year = parseInt(dt.year);
+  let day = value.slice(0,2);
+  let month = value.slice(3, 5);
+  let year = value.slice(6);
+  
+  
 
-    //Calculate
-    let birth_month = month - actual_month;
-    let birth_year = actual_year - year;
-    
-    console.log(birth_year);
-    console.log(birth_month);
+  let newdate = dt.local(parseInt(year), parseInt(month), parseInt(day))
 
-    result.textContent = "You are " + birth_year + " years " + birth_month + " months old";
+  let birthdayInThisYear = dt.local(now.toObject().year, parseInt(month), parseInt(day))
 
-});
+  console.log(birthdayInThisYear.toLocaleString());
+
+  let diference = now.diff(newdate, ['years', 'months']).toObject();
+  let diferenceBirthDay = birthdayInThisYear.diff(now, ['days']).toObject();
+  let differenceDays = Math.floor(diferenceBirthDay.days)+1
+  if(diference.years < 0){
+    alert("Data invalida.")
+    return;
+  }
+
+  result.textContent = diference.years + " years and " + Math.floor(diference.months) + " months old";
+  resultDays.textContent =  differenceDays + " days left to your birthday"
+})
