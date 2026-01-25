@@ -22,7 +22,7 @@ date.addEventListener("input", () =>{
 BTN_calculate.addEventListener("click", () =>{
   let value = date.value;
   if(value.length != 10){
-    alert("Digite no formato correto");
+    alert("Type in correct format");
     return;
   }
 
@@ -42,7 +42,7 @@ BTN_calculate.addEventListener("click", () =>{
   let diferenceBirthDay = birthdayInThisYear.diff(now, ['days']).toObject();
   let differenceDays = Math.floor(diferenceBirthDay.days)+1
   if(diference.years < 0){
-    alert("Data invalida.")
+    alert("Invalid Date.")
     return;
   }
 
