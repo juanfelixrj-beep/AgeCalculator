@@ -22,7 +22,12 @@ date.addEventListener("input", () =>{
 BTN_calculate.addEventListener("click", () =>{
   let value = date.value;
   if(value.length != 10){
-    alert("Type in correct format");
+    result.textContent = "Type in the correct format"
+    result.style.color = "red"
+    setTimeout(()=>{
+      result.textContent = ""
+    result.style.color = "black"
+    }, 3000)
     return;
   }
 

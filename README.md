@@ -24,6 +24,10 @@ O objetivo do projeto é praticar **manipulação de datas**, **lógica em JavaS
 
 ---
 
+##Screenshot
+![Screenshot](preview/image.png)
+
+
 ## 📂 Estrutura do Projeto
 
 ```text
