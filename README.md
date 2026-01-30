@@ -26,7 +26,8 @@ O objetivo do projeto é praticar **manipulação de datas**, **lógica em JavaS
 ## Para Teste
 [Visite a Calculadora de Idade](https://agecalculator-2hxm.onrender.com)
 
-##Screenshot
+---
+## Screenshot
 ![Screenshot](preview/image.png)
 
 
